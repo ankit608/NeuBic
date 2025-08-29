@@ -57,10 +57,21 @@ useEffect(() => {
        <FileProvider>
         <FolderStructureProvider>
         <LanguageProvider>
-          <main className=' flex h-[50vh] '>
-            <FileTreeWrapper />
+            <nav className='bg-slate-800 text-white p-1'>
+                    <div className="w-full mx-auto flex justify-between items-center">
+                   <div className="text-3xl font-extrabold bg-gradient-to-r from-green-200 to-green-700 bg-clip-text text-transparent"> NeuBic </div>
+              </div>
+                  
+              
+               </nav>
+          <main className=' flex  bg-slate-900 h-[70vh] '>
+            
+            <div className='h-full overflow-x-hidden pr-2'>
+               <FileTreeWrapper />
+            </div>
+           
             <CodeEditor /> 
-           <iframe ref={iframeRef} className="flex-1 w-full h-screen" src="http://localhost:4000" title='embedded app'/>
+           <iframe ref={iframeRef} className="flex-1 w-full h-full" src="http://localhost:4000" title='embedded app'/>
             <button onClick={() => {
               if (iframeRef.current) {
                 iframeRef.current.src = iframeRef.current.src;

@@ -77,7 +77,7 @@ const WebTerminal = () => {
       ref={containerRef}
       tabIndex={0}
       style={{
-        marginTop:"100px",
+        marginTop:"0px",
         width: '100%',
         height: '400px',
         backgroundColor: 'black',

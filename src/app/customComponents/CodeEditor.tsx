@@ -95,8 +95,9 @@ const handleEditorDidMount: OnMount = (editor: monacoEditor.editor.IStandaloneCo
   return (
 
   
-    <div className='flex-1' style={{ height: "100%" }}>
-        <select onChange={(e) => setLanguage(e.target.value)} value={language}>
+    <div className='flex-1 h-full relative'>
+      
+        <select className='absolute top-10 z-10 bg-slate-100' onChange={(e) => setLanguage(e.target.value)} value={language}>
   <option value="javascript">JavaScript</option>
   <option value="python">Python</option>
   <option value="cpp">C++</option>
@@ -109,7 +110,12 @@ const handleEditorDidMount: OnMount = (editor: monacoEditor.editor.IStandaloneCo
         theme="vs-dark"
          onMount={handleEditorDidMount}
       />
-      <button onClick={()=>{save()}}>run</button>
+      <button
+  className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md"
+  onClick={save}
+>
+  Run
+</button>
     </div>
   );
 };

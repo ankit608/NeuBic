@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iconify-json/vscode-icons": "^1.2.30",
+    "@iconify/react": "^6.0.0",
     "@monaco-editor/react": "^4.7.0",
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
+    "chokidar": "^4.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dockerode": "^4.0.7",
@@ -34,9 +37,10 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@iconify/icons-vscode-icons": "^1.2.29",
     "@tailwindcss/postcss": "^4",
     "@types/dockerode": "^3.3.42",
-    "@types/node": "^20",
+    "@types/node": "^20.19.11",
     "@types/pg": "^8.15.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
