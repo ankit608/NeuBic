@@ -49,10 +49,6 @@ export const FileTree = ({ node }: FileTreeProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
-    if (ref.current) {
-      // ref.current.className = "bg-blue-900/50";
-    }
-
     if (node.type === "folder") {
       setExpanded((prev) => !prev);
     } else {
@@ -76,23 +72,29 @@ export const FileTree = ({ node }: FileTreeProps) => {
   }, [node]);
 
   return (
-    <div style={{ paddingLeft: 20 }} className="">
+    <div style={{ paddingLeft: 20 }} className=" w-full">
       <div
         ref={ref}
         onClick={handleClick}
-        className=" flex text-white/80 gap-2 hover:bg-white/10 rounded-md cursor-pointer"
-        // style={{
-        //   cursor: "pointer",
-        //   color: node.type === "folder" ? "blue" : "",
-        //   display: "flex",
-        //   alignItems: "center",
-        //   gap: "6px",
-        // }}
+      className="flex items-center text-white/80 gap-2 hover:bg-white/60 rounded-md cursor-pointer px-2 py-1 w-full"
       >
+        {/* Arrow for folders */}
+        {node.type === "folder" && (
+          <Icon
+            icon={expanded ? "mdi:chevron-down" : "mdi:chevron-right"}
+            width={16}
+            height={16}
+          />
+        )}
+
+        {/* File/folder icon */}
         <Icon icon={getFileIcon(node.name, node.type)} width={18} height={18} />
+
+        {/* File/Folder name */}
         {node.name}
       </div>
 
+      {/* Child nodes */}
       {node.type === "folder" &&
         expanded &&
         node.children?.map((child, idx) => <FileTree key={idx} node={child} />)}

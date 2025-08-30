@@ -71,7 +71,7 @@ useEffect(() => {
             </div>
            
             <CodeEditor /> 
-           <iframe ref={iframeRef} className="flex-1 w-full h-full" src="http://localhost:4000" title='embedded app'/>
+           <iframe ref={iframeRef} className="flex-1 w-full h-full bg-white" src="http://localhost:4000" title='embedded app'/>
             <button onClick={() => {
               if (iframeRef.current) {
                 iframeRef.current.src = iframeRef.current.src;
